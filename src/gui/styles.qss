@@ -1,0 +1,273 @@
+/* Modern, Premium Seafoam Green Dark Theme for Video Recoverer by Leke Tech */
+
+QWidget {
+    background-color: #131716;
+    color: #f0fdfa;
+    font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+    font-size: 14px;
+}
+
+/* Typography Hierarchy */
+QLabel {
+    background: transparent;
+}
+
+QLabel#branding {
+    font-size: 13px;
+    font-weight: 700;
+    color: #2dd4bf; /* Seafoam green accent */
+    letter-spacing: 2px;
+}
+
+QLabel#headline {
+    font-size: 26px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+QLabel#subheadline {
+    font-size: 15px;
+    color: #99aba7;
+    font-weight: 400;
+}
+
+QLabel#privacy {
+    font-size: 13px;
+    color: #2dd4bf; /* Seafoam green */
+    font-weight: 500;
+}
+
+QLabel#technical_details {
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 12px;
+    color: #8fa6a2;
+    background-color: #0c100f;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #1f2e2b;
+}
+
+/* Primary Button - Seafoam Green */
+QPushButton#primary_button {
+    background-color: #14b8a6; /* Vibrant Seafoam Green */
+    color: #042f2e; /* High-contrast deep spruce/teal */
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+QPushButton#primary_button:hover {
+    background-color: #2dd4bf; /* Bright Luminous Seafoam */
+    color: #042f2e;
+}
+
+QPushButton#primary_button:pressed {
+    background-color: #0d9488; /* Deep Seafoam */
+    color: #ffffff;
+}
+
+QPushButton#primary_button:disabled {
+    background-color: #232c2a;
+    color: #556663;
+}
+
+/* Secondary Button */
+QPushButton#secondary_button {
+    background-color: #1b2422;
+    color: #e6f4f1;
+    border: 1px solid #2d3c39;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+QPushButton#secondary_button:hover {
+    background-color: #23302d;
+    border: 1px solid #14b8a6;
+    color: #2dd4bf;
+}
+
+QPushButton#secondary_button:pressed {
+    background-color: #161e1c;
+}
+
+/* Ghost Button */
+QPushButton#ghost_button {
+    background-color: transparent;
+    color: #7b9490;
+    border: none;
+    padding: 6px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+QPushButton#ghost_button:hover {
+    color: #2dd4bf;
+    text-decoration: underline;
+}
+
+/* Dropzone */
+QFrame#dropzone {
+    border: 2px dashed #2b3b38;
+    border-radius: 12px;
+    background-color: #18201f;
+    margin: 10px 40px;
+}
+
+QFrame#dropzone:hover {
+    border: 2px dashed #2dd4bf;
+    background-color: #182a27;
+}
+
+QLabel#dropzone_text {
+    font-size: 16px;
+    color: #c7d8d5;
+    font-weight: 500;
+}
+
+/* Progress Bar - Seafoam Green */
+QProgressBar {
+    border: none;
+    background-color: #1f2a28;
+    border-radius: 4px;
+    height: 6px;
+    text-align: center;
+    color: transparent;
+    margin: 0px 40px;
+}
+
+QProgressBar::chunk {
+    background-color: #14b8a6;
+    border-radius: 4px;
+}
+
+/* Panels */
+QFrame#panel {
+    background-color: #17211f;
+    border-radius: 12px;
+    border: 1px solid #253633;
+    padding: 20px;
+    margin: 0px 40px;
+}
+
+QLabel#panel_title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+QLabel#panel_text {
+    font-size: 14px;
+    color: #c7d8d5;
+    line-height: 1.6;
+}
+
+/* Icons / Status Colors */
+QLabel#success_icon {
+    font-size: 48px;
+    color: #2dd4bf; /* Seafoam green success */
+}
+
+QLabel#error_icon {
+    font-size: 48px;
+    color: #f87171; /* Tailwind red-400 */
+}
+
+/* Menu Bar & Menus */
+QMenuBar {
+    background-color: #131716;
+    color: #c7d8d5;
+    border-bottom: 1px solid #1e2927;
+    font-size: 13px;
+    padding: 2px 8px;
+}
+
+QMenuBar::item {
+    background: transparent;
+    padding: 6px 12px;
+    border-radius: 4px;
+}
+
+QMenuBar::item:selected {
+    background-color: #1e2c29;
+    color: #2dd4bf;
+}
+
+QMenuBar::item:pressed {
+    background-color: #14b8a6;
+    color: #042f2e;
+}
+
+QMenu {
+    background-color: #17211f;
+    color: #e6f4f1;
+    border: 1px solid #273935;
+    border-radius: 8px;
+    padding: 6px 0px;
+}
+
+QMenu::item {
+    padding: 7px 28px 7px 18px;
+    border-radius: 4px;
+    margin: 2px 4px;
+}
+
+QMenu::item:selected {
+    background-color: #1e2f2b;
+    color: #2dd4bf;
+}
+
+QMenu::item:disabled {
+    color: #4d5e5b;
+}
+
+QMenu::separator {
+    height: 1px;
+    background-color: #253633;
+    margin: 4px 8px;
+}
+
+/* Dialogs & Diagnostic Text */
+QDialog {
+    background-color: #131716;
+    color: #f0fdfa;
+}
+
+QMessageBox {
+    background-color: #17211f;
+    color: #f0fdfa;
+}
+
+QMessageBox QLabel {
+    color: #e6f4f1;
+    font-size: 13px;
+}
+
+QMessageBox QPushButton {
+    background-color: #14b8a6;
+    color: #042f2e;
+    font-weight: 700;
+    font-size: 13px;
+    padding: 8px 18px;
+    border-radius: 6px;
+    border: none;
+}
+
+QMessageBox QPushButton:hover {
+    background-color: #2dd4bf;
+}
+
+QTextEdit#diagnostic_text {
+    background-color: #0c100f;
+    color: #8fa6a2;
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 12px;
+    border: 1px solid #1f2e2b;
+    border-radius: 8px;
+    padding: 10px;
+}
