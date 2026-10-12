@@ -1,5 +1,8 @@
 # Product Specification: Video Recovery Desktop App
 
+- **Organization:** [Leke Tech](https://leke-tech.com)
+- **Product Landing Page:** [leke-tech.com/video-recoverer](https://leke-tech.com/video-recoverer)
+
 ## 1. Product Vision
 To provide a dead-simple, reliable, and privacy-respecting tool for recovering corrupted MP4 videos (such as interrupted screen recordings or camera crashes) without requiring a "healthy reference file" from the same device. 
 

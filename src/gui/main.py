@@ -9,12 +9,12 @@ from PyQt6.QtWidgets import (
     QLabel, QPushButton, QFileDialog, QProgressBar, QHBoxLayout, QFrame,
     QDialog, QTextEdit, QMessageBox
 )
-from PyQt6.QtCore import Qt, pyqtSignal
-from PyQt6.QtGui import QCursor, QIcon, QPixmap, QAction
+from PyQt6.QtCore import Qt, pyqtSignal, QUrl
+from PyQt6.QtGui import QCursor, QIcon, QPixmap, QAction, QDesktopServices
 
 from src.gui.worker import AnalysisWorker, RecoveryWorker
 from src.api.models import RecoveryMetadata
-from src.version import __version__
+from src.version import __version__, WEBSITE_URL, PRODUCT_URL
 from src.api.diagnostics import generate_diagnostic_report
 
 class DropZone(QFrame):
@@ -157,6 +157,18 @@ class MainWindow(QMainWindow):
         action_integrity.setStatusTip("View forensic principles: read-only, zero transcoding, local-only")
         action_integrity.triggered.connect(self.action_show_integrity_policy)
         help_menu.addAction(action_integrity)
+
+        help_menu.addSeparator()
+
+        action_site = QAction("Visit &Website (leke-tech.com)", self)
+        action_site.setStatusTip("Open official website: https://leke-tech.com")
+        action_site.triggered.connect(lambda: QDesktopServices.openUrl(QUrl(WEBSITE_URL)))
+        help_menu.addAction(action_site)
+
+        action_product = QAction("Video Recoverer &Page (leke-tech.com/video-recoverer)", self)
+        action_product.setStatusTip("Open official product page: https://leke-tech.com/video-recoverer")
+        action_product.triggered.connect(lambda: QDesktopServices.openUrl(QUrl(PRODUCT_URL)))
+        help_menu.addAction(action_product)
 
         help_menu.addSeparator()
 
@@ -307,12 +319,23 @@ class MainWindow(QMainWindow):
             f"<hr style='border: 0; border-top: 1px solid #273935;'/>"
             f"<p style='color: #e6f4f1;'>Bespoke reference-free forensic video recovery engine for damaged, truncated, or unfinalized MP4 recordings.</p>"
             f"<p style='color: #8fa6a2; font-size: 12px;'>100% Local &bull; Read-Only Operations &bull; Zero Transcoding</p>"
-            f"<p style='color: #2dd4bf; font-size: 12px;'>© 2026 Leke Tech. All rights reserved.</p>"
+            f"<p style='margin-top: 14px; margin-bottom: 4px;'>"
+            f"<a href='{PRODUCT_URL}' style='color: #2dd4bf; font-weight: bold; text-decoration: underline;'>leke-tech.com/video-recoverer</a>"
+            f"</p>"
+            f"<p style='margin-top: 0; margin-bottom: 12px; font-size: 12px;'>"
+            f"<a href='{WEBSITE_URL}' style='color: #5eead4; text-decoration: underline;'>leke-tech.com</a>"
+            f"</p>"
+            f"<p style='color: #8fa6a2; font-size: 11px;'>© 2026 Leke Tech. All rights reserved.</p>"
             f"</div>"
         )
         msg = QMessageBox(self)
         msg.setWindowTitle("About Video Recoverer")
+        msg.setTextFormat(Qt.TextFormat.RichText)
+        msg.setTextInteractionFlags(Qt.TextInteractionFlag.TextBrowserInteraction)
         msg.setText(text)
+        lbl = msg.findChild(QLabel, "qt_msgbox_label")
+        if lbl:
+            lbl.setOpenExternalLinks(True)
         if os.path.exists(icon_path):
             msg.setIconPixmap(QPixmap(icon_path).scaled(64, 64, Qt.AspectRatioMode.KeepAspectRatio, Qt.TransformationMode.SmoothTransformation))
         msg.exec()
@@ -360,6 +383,14 @@ class MainWindow(QMainWindow):
         privacy.setObjectName("privacy")
         privacy.setAlignment(Qt.AlignmentFlag.AlignCenter)
         
+        site_links = QLabel(
+            f"<a href='{PRODUCT_URL}' style='color: #2dd4bf; text-decoration: none;'>leke-tech.com/video-recoverer</a>"
+            f" &nbsp;&bull;&nbsp; "
+            f"<a href='{WEBSITE_URL}' style='color: #8fa6a2; text-decoration: none;'>leke-tech.com</a>"
+        )
+        site_links.setOpenExternalLinks(True)
+        site_links.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
         version_lbl = QLabel(f"Version {__version__}")
         version_lbl.setObjectName("version_text")
         version_lbl.setStyleSheet("color: #777777; font-size: 11px;")
@@ -371,7 +402,9 @@ class MainWindow(QMainWindow):
         layout.addWidget(self.dropzone, 1) # strech factor 1
         layout.addSpacing(20)
         layout.addWidget(privacy)
-        layout.addSpacing(10)
+        layout.addSpacing(6)
+        layout.addWidget(site_links)
+        layout.addSpacing(4)
         layout.addWidget(version_lbl)
         layout.addSpacing(10)
         
@@ -537,6 +570,17 @@ class MainWindow(QMainWindow):
         layout.addSpacing(20)
         layout.addLayout(btn_layout)
         layout.addLayout(btn_reset_layout)
+        
+        site_links_success = QLabel(
+            f"<span style='color: #8fa6a2; font-size: 11px;'>Need updates or support? </span>"
+            f"<a href='{PRODUCT_URL}' style='color: #2dd4bf; text-decoration: underline; font-size: 11px;'>leke-tech.com/video-recoverer</a>"
+            f" &bull; "
+            f"<a href='{WEBSITE_URL}' style='color: #2dd4bf; text-decoration: underline; font-size: 11px;'>leke-tech.com</a>"
+        )
+        site_links_success.setOpenExternalLinks(True)
+        site_links_success.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        layout.addSpacing(14)
+        layout.addWidget(site_links_success)
         layout.addStretch()
         
         widget.setLayout(layout)
@@ -600,6 +644,17 @@ class MainWindow(QMainWindow):
         layout.addWidget(self.tech_details_frame)
         layout.addSpacing(10)
         layout.addLayout(btn_layout)
+        
+        site_links_fail = QLabel(
+            f"<span style='color: #8fa6a2; font-size: 11px;'>For forensic recovery assistance: </span>"
+            f"<a href='{PRODUCT_URL}' style='color: #2dd4bf; text-decoration: underline; font-size: 11px;'>leke-tech.com/video-recoverer</a>"
+            f" &bull; "
+            f"<a href='{WEBSITE_URL}' style='color: #2dd4bf; text-decoration: underline; font-size: 11px;'>leke-tech.com</a>"
+        )
+        site_links_fail.setOpenExternalLinks(True)
+        site_links_fail.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        layout.addSpacing(14)
+        layout.addWidget(site_links_fail)
         layout.addStretch()
         
         widget.setLayout(layout)

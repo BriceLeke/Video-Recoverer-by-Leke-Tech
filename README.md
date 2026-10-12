@@ -1,9 +1,17 @@
 # Video Recoverer by Leke Tech
 
+[![Official Site](https://img.shields.io/badge/Official_Site-leke--tech.com-2dd4bf?style=flat-square)](https://leke-tech.com)
+[![Product Page](https://img.shields.io/badge/Product_Page-leke--tech.com%2Fvideo--recoverer-14b8a6?style=flat-square)](https://leke-tech.com/video-recoverer)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
+[![Platform](https://img.shields.io/badge/Platform-Windows_x64-blue.svg?style=flat-square)]()
+
+> 🌐 **Official Website:** [leke-tech.com](https://leke-tech.com)  
+> 🎬 **Product Page:** [leke-tech.com/video-recoverer](https://leke-tech.com/video-recoverer)
+
 Forensic MP4 recovery tool that restores playable video from corrupted recordings when container metadata is missing or incomplete.
 
 ## What is this?
-This project is a bespoke, forensic MP4 recovery tool developed by Leke Tech. When an Android device, screen recorder, or camera crashes during recording, the resulting MP4 file is often left in an incomplete state (typically missing the `moov` atom, which contains the index of all media samples). Without this index, standard media players cannot play the file. 
+This project is a bespoke, forensic MP4 recovery tool developed by [Leke Tech](https://leke-tech.com). Official downloads, product information, and updates are available at [leke-tech.com/video-recoverer](https://leke-tech.com/video-recoverer). When an Android device, screen recorder, or camera crashes during recording, the resulting MP4 file is often left in an incomplete state (typically missing the `moov` atom, which contains the index of all media samples). Without this index, standard media players cannot play the file. 
 
 This engine scans the raw bitstream of the corrupted file, identifies the video frames (NAL units), and re-muxes them into a new, valid MP4 container.
 
@@ -29,11 +37,11 @@ Currently, the recovery engine focuses on the most common screen recording and m
 
 ## Installation
 
-The easiest way to use Video Recoverer is to download the standalone application. You do not need to install Python or FFmpeg—everything is bundled for you.
+The easiest way to use Video Recoverer is to download the prebuilt standalone application directly from our official product page or GitHub:
 
-1. Go to the [Releases](https://github.com/leke-tech/video-recoverer/releases) page.
-2. Download `VideoRecoverer_v1.0.0.exe` (Windows).
-3. Double-click to run.
+1. Visit [leke-tech.com/video-recoverer](https://leke-tech.com/video-recoverer) or go to the [GitHub Releases](https://github.com/leke-tech/video-recoverer/releases) page.
+2. Download `VideoRecoverer_v1.0.0_win64.zip` or `VideoRecoverer.exe` (Windows).
+3. Double-click to run. You do not need to install Python or FFmpeg—all forensic engines are self-contained.
 
 ### Development Setup
 If you want to run from source or contribute to the project:
@@ -89,7 +97,10 @@ We welcome contributions! Please read our [CONTRIBUTING.md](CONTRIBUTING.md) for
 Check out the `docs/` folder for a deep dive into the technical recovery approach, including the `RECOVERY_ALGORITHM.md` and `ARCHITECTURE.md`.
 
 ## Credits & Attribution
-This product was developed by **Leke Tech** and created by **Brice Leke** (Founder & CEO). 
+This product was developed by [Leke Tech](https://leke-tech.com) and created by **Brice Leke** (Founder & CEO). 
+
+*   **Official Website:** [leke-tech.com](https://leke-tech.com)
+*   **Product Page:** [leke-tech.com/video-recoverer](https://leke-tech.com/video-recoverer)
 
 If you use this tool in an investigative, corporate, or academic setting, or if you integrate its engine into your own products, we kindly ask that you provide attribution to Leke Tech and Brice Leke.
 
