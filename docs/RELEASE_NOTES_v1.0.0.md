@@ -36,6 +36,6 @@ This release provides a standalone binary for **Windows**. You do not need to in
 If your video isn't fully recovered or plays with severe artifacting, we want to know! 
 1. Run your video through the application.
 2. Click the **Export Diagnostic Report** button on the final screen.
-3. Open a [GitHub Issue](https://github.com/leke-tech/video-recoverer/issues) and attach this text file. 
+3. Open a [GitHub Issue](https://github.com/BriceLeke/Video-Recoverer-by-Leke-Tech/issues) and attach this text file. 
 
 *Note: The diagnostic report contains only technical data (byte offsets, SPS/PPS codecs, file size). It does not contain your personal video content.*

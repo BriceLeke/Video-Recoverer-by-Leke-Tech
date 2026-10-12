@@ -39,7 +39,7 @@ Currently, the recovery engine focuses on the most common screen recording and m
 
 The easiest way to use Video Recoverer is to download the prebuilt standalone application directly from our official product page or GitHub:
 
-1. Visit [leke-tech.com/video-recoverer](https://leke-tech.com/video-recoverer) or go to the [GitHub Releases](https://github.com/leke-tech/video-recoverer/releases) page.
+1. Visit [leke-tech.com/video-recoverer](https://leke-tech.com/video-recoverer) or go to the [GitHub Releases](https://github.com/BriceLeke/Video-Recoverer-by-Leke-Tech/releases) page.
 2. Download `VideoRecoverer_v1.0.0_win64.zip` or `VideoRecoverer.exe` (Windows).
 3. Double-click to run. You do not need to install Python or FFmpeg—all forensic engines are self-contained.
 
@@ -50,8 +50,8 @@ If you want to run from source or contribute to the project:
 ### Setup
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/video-recoverer.git
-   cd video-recoverer
+   git clone https://github.com/BriceLeke/Video-Recoverer-by-Leke-Tech.git
+   cd Video-Recoverer-by-Leke-Tech
    ```
 2. Create a virtual environment and install dependencies:
    ```bash
@@ -89,7 +89,7 @@ If your video isn't fully recovered or fails to play properly, Video Recoverer a
 
 **Privacy Note:** The diagnostic report is strictly technical (app version, file size, codec metadata, NALU boundaries, and error codes). It **does not** contain your video data, audio data, or personal file paths.
 
-Please attach this report when opening a [GitHub Issue](https://github.com/leke-tech/video-recoverer/issues). This helps us improve compatibility with additional camera encoders and corruption variants!
+Please attach this report when opening a [GitHub Issue](https://github.com/BriceLeke/Video-Recoverer-by-Leke-Tech/issues). This helps us improve compatibility with additional camera encoders and corruption variants!
 
 ## Contributing
 We welcome contributions! Please read our [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests.
