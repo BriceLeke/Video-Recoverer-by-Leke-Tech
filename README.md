@@ -25,6 +25,14 @@ Most existing open-source recovery tools (like `untrunc`) require a "healthy ref
 - **Large File Support**: Processes files cleanly in chunks. Does not load multi-gigabyte videos entirely into RAM.
 - **Clean UI**: Comes with a simple, professional desktop graphical interface for non-technical users.
 
+## Screenshots
+
+| 1. Drag & Drop Broken Video | 2. Forensic Stream Analysis |
+| :---: | :---: |
+| <img src="docs/screenshots/01_main_window.png" width="380" alt="Main Window"/> | <img src="docs/screenshots/02_analyzing_stream.png" width="380" alt="Analyzing Video"/> |
+| **3. Bitstream Recovery Preview** | **4. Reconstruction Complete** |
+| <img src="docs/screenshots/03_ready_for_recovery.png" width="380" alt="Ready for Recovery"/> | <img src="docs/screenshots/04_recovery_complete.png" width="380" alt="Recovery Complete"/> |
+
 ## Supported Formats
 Currently, the recovery engine focuses on the most common screen recording and mobile camera formats:
 - **Container**: `.mp4`

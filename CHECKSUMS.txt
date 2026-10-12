@@ -1,1 +1,1 @@
-6ddb4916405c09514ae40cacb1f5ff3cc3c438488998a0e6bf67299f7ba7bf3d  VideoRecoverer_v1.0.0_win64.zip
+36f7e51c7d06bca1cd61f4688e5cf9d7c59625be65a7ae14c9e2b941a967c648  VideoRecoverer_v1.0.0_win64.zip
